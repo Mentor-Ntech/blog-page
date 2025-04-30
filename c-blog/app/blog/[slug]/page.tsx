@@ -237,6 +237,11 @@ import { blogPosts } from "@/data/blog-posts"
 import { notFound } from "next/navigation"
 import { CommentsSection } from "@/components/comments-section"
 
+type Props = {
+  params: {
+    slug: string;
+  };
+};
 export default async function BlogPostPage({
   params,
 }: {
