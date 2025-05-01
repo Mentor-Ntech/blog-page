@@ -244,9 +244,13 @@ type Props = {
 };
 export default async function BlogPostPage({
   params,
-}: {
-  params: { slug: string }
-}) {
+}: Props){
+  const slug = params.slug;
+
+  const post = blogPosts.find((post) => {
+    const postSlug = post.href.split("/").pop();
+    return postSlug === slug;
+  }); {
   // Awaiting the params is not necessary here since they are passed directly.
   // The issue is more about ensuring the function is async if dynamic segments are used.
 
@@ -362,5 +366,5 @@ export default async function BlogPostPage({
       <BlogFooter />
     </div>
   )
-}
+}}
 
