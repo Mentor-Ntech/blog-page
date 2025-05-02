@@ -228,41 +228,31 @@
 //   )
 // }
 
-import Link from "next/link"
-import Image from "next/image"
-import { BlogHeader } from "@/components/blog-header"
-import { BlogFooter } from "@/components/blog-footer"
-import { RelatedPosts } from "@/components/related-posts"
-import { blogPosts } from "@/data/blog-posts"
-import { notFound } from "next/navigation"
-import { CommentsSection } from "@/components/comments-section"
+import Link from "next/link";
+import Image from "next/image";
+import { BlogHeader } from "@/components/blog-header";
+import { BlogFooter } from "@/components/blog-footer";
+import { RelatedPosts } from "@/components/related-posts";
+import { blogPosts } from "@/data/blog-posts";
+import { notFound } from "next/navigation";
+import { CommentsSection } from "@/components/comments-section";
 
 type Props = {
   params: {
     slug: string;
   };
 };
-export default async function BlogPostPage({
-  params,
-}: Props){
+
+export default async function BlogPostPage({ params }: Props) {
   const slug = params.slug;
 
   const post = blogPosts.find((post) => {
     const postSlug = post.href.split("/").pop();
     return postSlug === slug;
-  }); {
-  // Awaiting the params is not necessary here since they are passed directly.
-  // The issue is more about ensuring the function is async if dynamic segments are used.
-
-  const slug = params.slug
-
-  const post = blogPosts.find((post) => {
-    const postSlug = post.href.split("/").pop()
-    return postSlug === slug
-  })
+  });
 
   if (!post) {
-    notFound()
+    notFound(); // 404 page if not found
   }
 
   const relatedPosts = blogPosts
@@ -272,7 +262,7 @@ export default async function BlogPostPage({
         p.category === post.category ||
         p.tags.some((tag) => post.tags.includes(tag))
     )
-    .slice(0, 3)
+    .slice(0, 3);
 
   return (
     <div className="min-h-screen bg-white text-gray-800">
@@ -330,7 +320,6 @@ export default async function BlogPostPage({
           {/* Post Content */}
           <div className="max-w-3xl mx-auto mb-16">
             <div className="prose prose-lg max-w-none">
-              {/* Replace with real content in prod */}
               <p className="text-lg leading-relaxed mb-6">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit...
               </p>
@@ -352,7 +341,7 @@ export default async function BlogPostPage({
             <div className="mt-8">
               <h3 className="text-lg font-bold mb-4">Share this post</h3>
               <div className="flex gap-4">
-                {/* Social buttons can stay unchanged */}
+                {/* Add your social buttons here */}
               </div>
             </div>
           </div>
@@ -365,6 +354,5 @@ export default async function BlogPostPage({
 
       <BlogFooter />
     </div>
-  )
-}}
-
+  );
+}
