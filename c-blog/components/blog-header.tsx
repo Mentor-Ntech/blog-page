@@ -70,17 +70,17 @@ export function BlogHeader() {
       {isMenuOpen && (
         <div className="sm:hidden bg-white py-4 shadow-lg">
           <div className="px-4 space-y-4">
-            <a
+            {/* <a
               className="block text-[#0066FF] hover:text-[#0052CC] px-3 py-2 text-sm font-medium"
               target="_blank"
               href="https://t.me/ckashapp"
               rel="noreferrer"
             >
               Support
-            </a>
-            <Link className="block text-gray-600 hover:text-[#0052CC] px-3 py-2 text-sm font-medium" href="/">
+            </a> */}
+            {/* <Link className="block text-gray-600 hover:text-[#0052CC] px-3 py-2 text-sm font-medium" href="/">
               Blog
-            </Link>
+            </Link> */}
             <a
               className="block text-gray-600 hover:text-[#0052CC] px-3 py-2 text-sm font-medium"
               target="_blank"
