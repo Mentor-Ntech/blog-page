@@ -81,14 +81,14 @@ export function BlogHeader() {
             {/* <Link className="block text-gray-600 hover:text-[#0052CC] px-3 py-2 text-sm font-medium" href="/">
               Blog
             </Link> */}
-            <a
+            {/* <a
               className="block text-gray-600 hover:text-[#0052CC] px-3 py-2 text-sm font-medium"
               target="_blank"
               href="https://t.me/ckashapp"
               rel="noreferrer"
             >
               Community
-            </a>
+            </a> */}
             <div className="pt-4">
               <a href="#" target="_blank" rel="noopener noreferrer">
                 <button className="w-full bg-[#0066FF] text-white px-4 py-3 rounded-sm text-base font-medium hover:bg-[#0052CC] transition-colors flex items-center justify-center gap-2">
