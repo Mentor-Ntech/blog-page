@@ -252,7 +252,7 @@ export default async function BlogPostPage({ params }: Props) {
   });
 
   if (!post) {
-    notFound(); // 404 page if not found
+    notFound();
   }
 
   const relatedPosts = blogPosts
@@ -341,12 +341,11 @@ export default async function BlogPostPage({ params }: Props) {
             <div className="mt-8">
               <h3 className="text-lg font-bold mb-4">Share this post</h3>
               <div className="flex gap-4">
-                {/* Add your social buttons here */}
+                {/* Add social share buttons */}
               </div>
             </div>
           </div>
 
-          {/* Related Posts and Comments Section */}
           <RelatedPosts posts={relatedPosts} />
           <CommentsSection postId={post.id} />
         </div>
